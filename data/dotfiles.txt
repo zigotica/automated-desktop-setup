@@ -1,0 +1,25 @@
+echo Move to $HOME folder
+cd $HOME
+
+echo Clone bare repo
+git clone --bare git@github.com:zigotica/tilde.git $HOME/._dotfiles.git
+
+echo Hide untracked files
+/usr/bin/git --git-dir=$HOME/._dotfiles.git/ --work-tree=$HOME config status.showUntrackedFiles no
+
+echo Add bare repo to .gitignore
+echo ._dotfiles.git >> $HOME/.gitignore
+
+echo backup current dotfiles
+mv $HOME/.config $HOME/.config.bk
+mv $HOME/.bash_profile $HOME/.bash_profile.bk
+mv $HOME/.bashrc $HOME/.bashrc.bk
+mv $HOME/.tmux.conf $HOME/.tmux.conf.bk
+mv $HOME/readme.md $HOME/readme.md.bk
+
+echo Checkout
+/usr/bin/git --git-dir=$HOME/._dotfiles.git/ --work-tree=$HOME checkout
+
+
+echo DONE
+echo Note that some of these changes require a logout/restart to take effect
