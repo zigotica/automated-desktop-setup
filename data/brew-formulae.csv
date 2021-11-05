@@ -4,6 +4,7 @@ c,Install homebrew?,true,sudo curl -fsSL https://raw.githubusercontent.com/Homeb
 ##,We are going to automatically update brew,,,
 r,Update & upgrade,,brew update && brew upgrade,
 ##,Official core formalae (No=uninstall but you can Skip),,,
+b,ansible,,,
 b,bash,,,
 b,bash-completion@2,,,
 b,coreutils,,,
