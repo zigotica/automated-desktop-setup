@@ -11,7 +11,7 @@ d,Show status bar,true,com.apple.finder ShowStatusBar,
 d,Show path bar,true,com.apple.finder ShowPathbar,
 d,Show folders on top when sorting by name,true,com.apple.finder _FXSortFoldersFirst,
 d,Enable the warning when changing a file extension,true,com.apple.finder FXEnableExtensionChangeWarning,
-d,Show a warning before emptying the Trash,true,com.apple.finder WarnOnEmptyTrash,
+d,Show a warning before emptying the Trash,false,com.apple.finder WarnOnEmptyTrash,
 c,Search the current folder by default (default This mac),true,defaults write com.apple.finder FXDefaultSearchScope -string 'SCcf',defaults write com.apple.finder FXDefaultSearchScope -string 'SCev'
 c,Use Column view in all Finder windows by default (default List view),true,defaults write com.apple.finder FXPreferredViewStyle -string 'clmv',defaults write com.apple.finder FXPreferredViewStyle -string 'Nlsv'
 c,Show the ~/Library folder,true,chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library,
