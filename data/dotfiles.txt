@@ -25,5 +25,8 @@ mkdir $HOME/.ssh
 cp $HOME/.ssh_bk/* $HOME/.ssh/
 ansible-vault decrypt $HOME/.ssh/*
 
+echo Add active app to login items
+osascript -e 'tell application "System Events" to make login item at end with properties {name: "active-app-qmk-layer-updater",path:"~/.config/bin/active-app-qmk-layer-updater/active-app-qmk-layer-updater.app", hidden:false}'
+
 echo DONE
 echo Note that some of these changes require a logout/restart to take effect
