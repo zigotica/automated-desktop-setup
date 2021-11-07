@@ -1,0 +1,35 @@
+echo Create personal and work folders
+mkdir $HOME/Documents/personal
+mkdir $HOME/Documents/work
+
+echo Move to personal folder
+cd $HOME/Documents/personal
+
+echo Clone active app qmk layer updater
+git clone git@github.com:zigotica/active-app-qmk-layer-updater.git
+
+echo Clone Automated Desktop Setup
+git clone git@github.com:zigotica/automated-desktop-setup.git
+
+echo Clone mechanical keyboards
+git clone git@github.com:zigotica/mechanical-keyboards.git
+
+echo Clone JSON based conditions and rules logic evaluator
+git clone git@github.com:zigotica/json-based-conditions-and-rules-logic-evaluator.git
+
+echo Clone zigotica.com
+git clone git@github.com:zigotica/zigotica.com.git
+
+echo Clone Quantum Mechanical Keyboard Firmware
+git clone git@github.com:zigotica/qmk_firmware.git
+
+echo Clone sergimeseguer.com
+git clone git@github.com:zigotica/smeseguer.com.git
+
+echo Move to personal folder
+cd $HOME/Documents/personal
+
+echo Remember to clone work related projects now
+
+echo DONE
+echo Note that some of these changes require a logout/restart to take effect

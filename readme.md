@@ -69,7 +69,8 @@ In my case, I run the script in this order:
 1. Install [Homebrew](https://brew.sh/), formulae and casks, using `data/brew-formulae.csv`.
 2. Configure macOS defaults, using `data/defaults-macos.csv`.
 3. Clone my [dotfiles](https://github.com/zigotica/tilde/) as a [bare repo](https://www.atlassian.com/git/tutorials/dotfiles), using `data/dotfiles.txt`.
-4. Enjoy
+4. Create personal and work folders and clone repos into them
+5. Enjoy
 
 ### Install Homebrew formulae
 
@@ -100,6 +101,14 @@ You can use a txt file to add a few custom commands without the need to edit the
 ```
 
 Being a txt file, the script will NOT prompt for options.
+
+### Clone repos
+
+I am also using the scritp to create personal and work folders and clone repos into them:
+
+```bash
+./.setup.sh -f data/repos.txt -r
+```
 
 With all these, you should be ready to go and enjoy your new computer.
 
