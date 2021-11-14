@@ -30,6 +30,7 @@ current_intro=" - current value:"
 spacer() {
     [[ $1 == "h1" ]] && echo " ############################################################################";
     [[ $1 == "h2" ]] && echo " ----------------------------------------------------------------------------";
+    [[ $1 == "h3" ]] && echo " -----> $2";
 }
 
 h1() {
@@ -38,6 +39,10 @@ h1() {
 
 h2() {
     echo; spacer "h2"; echo "  $1"; spacer "h2"; echo;
+}
+
+h3() {
+    echo; spacer "h3" "$1"; echo;
 }
 
 # Detect -f required argument and optional arguments -r (real run) and/or -s (silent)
@@ -86,14 +91,12 @@ echo;echo
 runner() {
     case "$dryrun" in
         1) 
-            echo " Dry run (fake): $2"
-            echo "$1"
-            echo
+            h3 "Dry run (fake):" "$2"
+            echo " $1"
             ;;
         0) 
-            echo " Running: $2"
-            echo "$1"
-            echo
+            h3 "Running:" "$2"
+            echo " $1"
             eval "$1"
             ;;
     esac
