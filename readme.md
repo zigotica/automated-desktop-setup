@@ -66,7 +66,7 @@ The idea behind the batch script and csv/txt files is that you only have to conf
 
 In my case, I run the script in this order:
 
-1. Install [Homebrew](https://brew.sh/), formulae and casks, using `data/brew-formulae.csv`.
+1. Install [Homebrew](https://brew.sh/), formulae and casks, using `data/brew-basics.csv`, `data/brew-formulae.csv`, `data/brew-casks.csv` and `data/brew-fonts.csv` files.
 2. Configure macOS defaults, using `data/defaults-macos.csv`.
 3. Clone my [dotfiles](https://github.com/zigotica/tilde/) as a [bare repo](https://www.atlassian.com/git/tutorials/dotfiles), using `data/dotfiles.txt`.
 4. Create personal and work folders and clone repos into them
@@ -77,10 +77,27 @@ In my case, I run the script in this order:
 When setting up a new Mac (or even Linux distribution), you may want to start by instaling all the development dependencies with Homebrew formulae (note the `-r` argument to run it for real):
 
 ```bash
+./.setup.sh -f data/brew-basics.csv -r
+```
+
+The script will install homebrew and then prompt giving you some options on each step (you can run without prompts if using `-s` argument) to install the core formulae. You can then optionally run other files:
+
+```bash
 ./.setup.sh -f data/brew-formulae.csv -r
 ```
 
-The script will prompt giving you some options on each step (you can run without prompts if using `-s` argument).
+or
+
+
+```bash
+./.setup.sh -f data/brew-casks.csv -r
+```
+
+or
+
+```bash
+./.setup.sh -f data/brew-fonts.csv -r
+```
 
 ### Sensible macOS defaults
 

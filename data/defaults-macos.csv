@@ -39,5 +39,6 @@ r,Keep-alive,,while true; do sudo -n true; sleep 60; kill -0 '$$' || exit; done 
 c,Disable the sound effects on boot,true,nvram StartupMute=%01;nvram BootAudio=%00,nvram -d StartupMute;nvram -d BootAudio
 c,Add iOS Simulator to Launchpad,true,sudo ln -sf /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app /Applications/Simulator.app,
 c,Add FileMerge to Launchpad,true,sudo ln -sf /Applications/Xcode.app/Contents/Applications/FileMerge.app /Applications/FileMerge.app,
+r,Replace current bash shell,,exec bash -l,
 #,DONE,,,
 ##,Note that some of these changes require a logout/restart to take effect,,,
