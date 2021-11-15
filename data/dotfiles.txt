@@ -11,6 +11,7 @@ echo backup current dotfiles
 mv $HOME/.config $HOME/.config.bk
 mv $HOME/.bash_profile $HOME/.bash_profile.bk
 mv $HOME/.bashrc $HOME/.bashrc.bk
+mv $HOME/.gitconfig $HOME/.gitconfig.bk
 mv $HOME/.tmux.conf $HOME/.tmux.conf.bk
 mv $HOME/readme.md $HOME/readme.md.bk
 
@@ -22,6 +23,9 @@ echo update remote url to use ssh
 
 echo copy .ssh_bk encrypted files into .ssh and decrypt them
 mkdir $HOME/.ssh && cp $HOME/.ssh_bk/* $HOME/.ssh/ && ansible-vault decrypt $HOME/.ssh/*
+
+echo copy $HOME/.gitconfig-work-hanzo.bk encrypted file into $HOME/.gitconfig-work-hanzo and decrypt it
+cp $HOME/.gitconfig-work-hanzo.bk $HOME/.gitconfig-work-hanzo && ansible-vault decrypt $HOME/.gitconfig-work-hanzo
 
 echo DONE
 echo Note that some of these changes require a logout/restart to take effect
