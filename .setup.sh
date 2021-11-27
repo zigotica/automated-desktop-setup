@@ -143,42 +143,37 @@ ask () {
 # $2 default answer
 # $3 command
 defaults_ask() {
-    # Check the default exists by reading it
-    # otherwise skip the whole setting question
-    cv=$(defaults read $3 2>&1 | tail -n1)
-    if [[ ! $cv =~ "does not exist" ]]; then
-        # Silent, run auto
-        if [[ $silent == 1 && $2 == false ]]; then
-            runner "defaults write $3 -bool false" "$1"
-        elif [[ $silent == 1 ]]; then
-            runner "defaults write $3 -bool true" "$1"
-        # Not silent, ask
+    # Silent, run auto
+    if [[ $silent == 1 && $2 == false ]]; then
+        runner "defaults write $3 -bool false" "$1"
+    elif [[ $silent == 1 ]]; then
+        runner "defaults write $3 -bool true" "$1"
+    # Not silent, ask
+    else
+        # reformat current data
+        echo;echo;
+        CURRENT="No)"
+        if [[ $cv == 1 || $cv == true ]]; then
+            CURRENT="Yes)"
+        fi
+
+        ## Default true or default false
+        if [[ $2 == false ]]; then
+            ask "$1 ${options_def_false} ${current_intro} ${CURRENT}" "$2"
         else
-            # reformat current data
-            echo;echo;
-            CURRENT="No)"
-            if [[ $cv == 1 || $cv == true ]]; then
-                CURRENT="Yes)"
-            fi
+            ask "$1 ${options_def_true} ${current_intro} ${CURRENT}" "$2"
+        fi
 
-            ## Default true or default false
-            if [[ $2 == false ]]; then
-                ask "$1 ${options_def_false} ${current_intro} ${CURRENT}" "$2"
-            else
-                ask "$1 ${options_def_true} ${current_intro} ${CURRENT}" "$2"
-            fi
+        # Get value if user accepted default
+        if [[ $answer == "accept" && $2 == false ]]; then
+            answer=false
+        elif [[ $answer == "accept" ]]; then
+            answer=true
+        fi
 
-            # Get value if user accepted default
-            if [[ $answer == "accept" && $2 == false ]]; then
-                answer=false
-            elif [[ $answer == "accept" ]]; then
-                answer=true
-            fi
-
-            # Run the answer through the dryrun check
-            if [[ $answer == true || $answer == false ]]; then
-                runner "defaults write $3 -bool $answer" "$1"
-            fi
+        # Run the answer through the dryrun check
+        if [[ $answer == true || $answer == false ]]; then
+            runner "defaults write $3 -bool $answer" "$1"
         fi
     fi
 }
