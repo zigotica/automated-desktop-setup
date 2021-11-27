@@ -116,7 +116,7 @@ Now restart Terminal and `brew` should be installed properly. Just check with:
 brew doctor
 ```
 
-### Install a decent version of Bash
+### Install a decent version of Bash
 
 MacOS bash version is really outdated:
 
