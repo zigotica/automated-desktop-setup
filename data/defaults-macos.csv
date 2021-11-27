@@ -31,8 +31,6 @@ d,Enable smart dashes,false,NSGlobalDomain NSAutomaticDashSubstitutionEnabled,
 d,Enable automatic period substitution,false,NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled,
 d,Enable smart quotes,false,NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled,
 d,Enable auto-correct,false,NSGlobalDomain NSAutomaticSpellingCorrectionEnabled,
-#,iTunes,,,
-c,Stop iTunes from responding to the keyboard media keys,true,launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null,launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 #,sudo commands,,,
 c,Do you want to run the next commands as administrator?,false,sudo -v,exit 0
 r,Keep-alive,,while true; do sudo -n true; sleep 60; kill -0 '$$' || exit; done 2>/dev/null &,
