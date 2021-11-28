@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+# Installing homebrew
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Create a .bash_profile, if it doesn't exist
+# Temporarily add some required path and env vars there
+# These will be rewriten / reloaded when we install the dotfiles
+[ ! -f "~/.bash_profile" ] && touch ~/.bash_profile
+
+# Save Homebrew’s installed location to current session and .bash_profile
+BREW_PREFIX=$(brew --prefix)
+echo "BREW_PREFIX=$(brew --prefix)" >> ~/.bash_profile
+
+# Add brew env vars to current session and bash_profile
+eval "$(${BREW_PREFIX}/bin/brew shellenv)"
+echo 'eval "$(${BREW_PREFIX}/bin/brew shellenv)"' >> ~/.bash_profile
+
+# ARM needs a prefix
+[[ `uname -v | grep "ARM64"` != "" ]] && alias brew="arch -arm64 brew" && echo 'alias brew="arch -arm64 brew"' >> ~/.bash_profile
+
+# check brew is properly installed
+brew doctor
+
+# Install GNU core utilities (those that come with macOS are outdated).
+brew install coreutils
+
+# Install a modern version of Bash.
+brew install bash
+brew install bash-completion2
+
+# Switch to using brew-installed bash as default shell
+if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
+  echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
+  chsh -s "${BREW_PREFIX}/bin/bash";
+fi;
+
+# Install a modern version of git
+brew install git
+
+# Install ansible, we will need to to decrypt ssh keys from dotfiles
+brew install ansible
+
+# Install neovim and plug
+brew install noevim --HEAD
+bash -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+

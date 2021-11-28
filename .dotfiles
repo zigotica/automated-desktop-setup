@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+echo "Clone bare repo using https (to avoid requiring .ssh key)"
+cd $HOME && git clone --bare https://github.com/zigotica/tilde.git $HOME/._dotfiles.git
+
+echo "Hide untracked files"
+cd $HOME && git --git-dir=$HOME/._dotfiles.git/ --work-tree=$HOME config status.showUntrackedFiles no
+
+echo "Add bare repo to .gitignore"
+echo ._dotfiles.git >> $HOME/.gitignore
+
+echo "backup current dotfiles"
+mv $HOME/.config $HOME/.config.bk
+mv $HOME/.bash_profile $HOME/.bash_profile.bk
+mv $HOME/.bashrc $HOME/.bashrc.bk
+mv $HOME/.gitconfig $HOME/.gitconfig.bk
+mv $HOME/.tmux.conf $HOME/.tmux.conf.bk
+mv $HOME/readme.md $HOME/readme.md.bk
+
+echo "Checkout"
+cd $HOME && git --git-dir=$HOME/._dotfiles.git/ --work-tree=$HOME checkout
+
+echo "update remote url to use ssh"
+git --git-dir=$HOME/._dotfiles.git/ --work-tree=$HOME remote set-url origin git@github.com:zigotica/tilde.git
+
+echo "copy .ssh_bk encrypted files into .ssh and decrypt them"
+mkdir $HOME/.ssh && cp $HOME/.ssh_bk/* $HOME/.ssh/ && ansible-vault decrypt $HOME/.ssh/*
+
+echo "copy $HOME/.gitconfig-work-hanzo.bk encrypted file into $HOME/.gitconfig-work-hanzo and decrypt it"
+cp $HOME/.gitconfig-work-hanzo.bk $HOME/.gitconfig-work-hanzo && ansible-vault decrypt $HOME/.gitconfig-work-hanzo
+
+echo "DONE"
+echo "Note that some of these changes require a logout/restart to take effect"
