@@ -14,10 +14,10 @@ d,Enable the warning when changing a file extension,true,com.apple.finder FXEnab
 d,Show a warning before emptying the Trash,false,com.apple.finder WarnOnEmptyTrash,
 c,Search the current folder by default (default This mac),true,defaults write com.apple.finder FXDefaultSearchScope -string 'SCcf',defaults write com.apple.finder FXDefaultSearchScope -string 'SCev'
 c,Use Column view in all Finder windows by default (default List view),true,defaults write com.apple.finder FXPreferredViewStyle -string 'clmv',defaults write com.apple.finder FXPreferredViewStyle -string 'Nlsv'
-c,Set Desktop as the default location for new Finder windows,true,defaults write com.apple.finder NewWindowTarget -string "PfDe" && defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/",
+c,Set Desktop as the default location for new Finder windows,true,defaults write com.apple.finder NewWindowTarget -string 'PfDe',
 c,Show the ~/Library folder,true,chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library,
 c,Show the /Volumes folder,true,chflags nohidden /Volumes,
-c,Disable the crash reporter,true,defaults write com.apple.CrashReporter DialogType -string "none",
+c,Disable the crash reporter,true,defaults write com.apple.CrashReporter DialogType -string 'none',
 #,Trackpad,,,
 c,Enable tap to click for this user and for the login screen,true,defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true && defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1 && defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1,defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool false && defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 0 && defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 0
 #,Dock and hot corners,,,
