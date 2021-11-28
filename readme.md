@@ -73,7 +73,7 @@ The idea behind the batch script and csv/txt files is that you only have to conf
 
 In my case, I run the scripts in this order (better restart Terminal after each of them):
 
-1. If you are using an ARM64 mac (M1, M1 Pro, M1 Max, ...) you will have to enable Rosetta for Terminal (at least at the time of this writting, end of 2021). To do so, select the Terminal app from Finder, right click, Get info, check the Open using Rosetta checkbox. Quit the Terminal, everytime it opens again it will be using Rosetta.
+1. If you are using an ARM64 mac (M1, M1 Pro, M1 Max, ...) you will read some articles saying you have to enable Rosetta for Terminal. This is no longer true, homebrew has native support for ARM mac chips.
 2. Install [Homebrew](https://brew.sh/)
 3. Install a decent version of Bash.
 4. Install formulae, casks and fonts, using `data/brew-formulae.csv`, `data/brew-casks.csv` and `data/brew-fonts.csv` files.
@@ -87,7 +87,7 @@ In my case, I run the scripts in this order (better restart Terminal after each 
 Homebrew is the best way so far to install all development dependencies, other software and even fonts. In this first step we will just install Homebrew from the Terminal:
 
 ```bash
-sudo curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 At the end of installation you will see a message that reads similar to this:
