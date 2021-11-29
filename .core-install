@@ -42,7 +42,7 @@ brew install git
 brew install ansible
 
 # Install neovim and plug
-brew install noevim --HEAD
+brew install neovim --HEAD
 bash -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
