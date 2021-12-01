@@ -25,6 +25,15 @@ brew doctor
 # Install GNU core utilities (those that come with macOS are outdated).
 brew install coreutils
 
+# Install some other useful utilities like `sponge`.
+brew install moreutils
+
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
+brew install findutils
+
+# Install GNU `sed`, overwriting the built-in `sed`.
+brew install gnu-sed --with-default-names
+
 # Install a modern version of Bash.
 brew install bash
 brew install bash-completion2
@@ -41,9 +50,8 @@ brew install git
 # Install ansible, we will need to to decrypt ssh keys from dotfiles
 brew install ansible
 
-# Install neovim and plug
+# Install neovim (latest) and plug
 brew install neovim --HEAD
 bash -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
 
