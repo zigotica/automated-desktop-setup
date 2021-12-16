@@ -75,14 +75,16 @@ You can run the script below:
 ./.dotfiles
 ```
 
-### Install nvm and node
+
+### Install nvm and node
 
 ```bash
 ./.node
 
 ```
 
-### Install neovim and LSP
+
+### Install neovim and LSP
 
 ```bash
 ./.nvim
