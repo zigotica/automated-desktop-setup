@@ -61,8 +61,7 @@ bash -c 'curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 # Install language servers for LSP, requires node
 # see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-
-brew install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 
 npm i -g bash-language-server #bashls
 npm i -g vscode-langservers-extracted # cssls, html, eslint, jsonls
