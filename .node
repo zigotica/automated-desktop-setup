@@ -1,0 +1,4 @@
+# Install Node Version Manager and Latest Node
+# Requires dotfiles with nvm path
+git clone https://github.com/nvm-sh/nvm.git $HOME/.nvm
+nvm install node

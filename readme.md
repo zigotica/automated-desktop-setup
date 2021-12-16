@@ -28,9 +28,11 @@ The idea behind the batch script and csv files is that you only have to configur
 
 In my case, I run the scripts in this order (better restart Terminal after each of them):
 
-1. Install [Homebrew](https://brew.sh/) and basic tools (bash, git, ansible, neovoim).
+1. Install [Homebrew](https://brew.sh/) and basic tools (bash, git, ansible).
 2. Download and install dotfiles
-3. Create personal and work folders and clone repos into them.
+3. Install nvm and node
+4. Install neovim and LSP
+5. Create personal and work folders and clone repos into them.
 
 
 Note: if you are using an ARM64 mac (M1, M1 Pro, M1 Max, ...) you will read some articles saying you have to enable Rosetta for Terminal. This is no longer true, homebrew has native support for ARM mac chips.
@@ -71,6 +73,20 @@ You can run the script below:
 
 ```bash
 ./.dotfiles
+```
+
+### Install nvm and node
+
+```bash
+./.node
+
+```
+
+### Install neovim and LSP
+
+```bash
+./.nvim
+
 ```
 
 ### Clone repos
