@@ -39,19 +39,19 @@ Note: if you are using an ARM64 mac (M1, M1 Pro, M1 Max, ...) you will read some
 
 ### Install Homebrew and basic tools
 
-Homebrew is the best way so far to install all development dependencies, other software and even fonts. We will first open the terminal and force the use of `bash`:
+We will first open the terminal and force the use of `bash`:
 
 ```bash
 chsh -s /bin/bash
 ```
 
-Then, close and open Terminal again. Now we can safely run the `.core-install` script:
+Then, close and open Terminal again. Now we can safely run the `.core-install` script to install Homebrew and some core dependencies. Homebrew is the best way so far to install all development dependencies, other software and even fonts:
 
 ```bash
 ./.core-install
 ```
 
-Restart the Terminal. Now `brew` and the basic tools should be installed properly. Just check with:
+Do not close the Terminal yet. Now `brew` and the basic tools should be installed properly. Just check with:
 
 ```bash
 brew doctor

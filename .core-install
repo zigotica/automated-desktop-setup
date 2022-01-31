@@ -13,8 +13,9 @@ BREW_PREFIX=$(brew --prefix)
 echo "BREW_PREFIX=$(brew --prefix)" >> ~/.bash_profile
 
 # Add brew env vars to current session and bash_profile
-eval "$(${BREW_PREFIX}/bin/brew shellenv)"
+# These will also be loaded from dotfiles once we pull the bare repo
 echo 'eval "$(${BREW_PREFIX}/bin/brew shellenv)"' >> ~/.bash_profile
+eval "$(${BREW_PREFIX}/bin/brew shellenv)"
 
 # ARM needs a prefix
 [[ `uname -v | grep "ARM64"` != "" ]] && alias brew="arch -arm64 brew" && echo 'alias brew="arch -arm64 brew"' >> ~/.bash_profile
