@@ -50,4 +50,5 @@ brew install git
 
 # Install ansible, we will need to to decrypt ssh keys from dotfiles
 brew install ansible
+brew install ansible-lint
 
