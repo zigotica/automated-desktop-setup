@@ -14,6 +14,8 @@ mv $HOME/.config $HOME/.config.bk
 mv $HOME/.bash_profile $HOME/.bash_profile.bk
 mv $HOME/.bashrc $HOME/.bashrc.bk
 mv $HOME/.gitconfig $HOME/.gitconfig.bk
+mv $HOME/.gitignore $HOME/.gitignore.bk
+mv $HOME/.gitignore_global $HOME/.gitignore_global.bk
 mv $HOME/.tmux.conf $HOME/.tmux.conf.bk
 mv $HOME/readme.md $HOME/readme.md.bk
 
