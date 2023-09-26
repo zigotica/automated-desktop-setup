@@ -32,7 +32,8 @@ In my case, I run the scripts in this order (better restart Terminal after each 
 2. Download and install dotfiles
 3. Install nvm and node
 4. Install neovim and LSP
-5. Create personal and work folders and clone repos into them.
+5. Create personal and work folders and clone repos into them
+6. Install brew formulae from csv files
 
 
 Note: if you are using an ARM64 mac (M1, M1 Pro, M1 Max, ...) you will read some articles saying you have to enable Rosetta for Terminal. This is no longer true, homebrew has native support for ARM mac chips.
