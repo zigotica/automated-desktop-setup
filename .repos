@@ -23,7 +23,10 @@ echo "Clone zigotica.com"
 git clone git@github.com:zigotica/zigotica.com.git
 
 echo "Clone Quantum Mechanical Keyboard Firmware"
-git clone git@github.com:zigotica/qmk_firmware.git qmk
+git clone git@github.com:zigotica/qmk_firmware.git
+
+echo "Clone Quantum Mechanical Keyboard personal Userspace"
+git clone git@github.com:zigotica/qmk_userspace.git
 
 echo "Clone sergimeseguer.com"
 git clone git@github.com:zigotica/smeseguer.com.git
