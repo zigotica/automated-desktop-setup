@@ -37,14 +37,6 @@ git clone git@github.com:zigotica/active-app-qmk-layer-updater.git
 echo "Clone sergimeseguer.com"
 git clone git@github.com:zigotica/smeseguer.com.git
 
-echo "Move to ansible folder and decrypt files"
-cd $HOME/Documents/personal/ansible
-unzip enc.zip
-cp enc/ansible.cfg ./ansible.cfg
-cp enc/inventory ./inventory
-cp -r enc/group_vars ./playbooks/group_vars
-cp -r enc/host_vars ./playbooks/host_vars
-
 echo "Move to work folder"
 cd $HOME/Documents/work
 
