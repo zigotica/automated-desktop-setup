@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+
+# exit if any command has a non-zero exit status 
+set -euxo pipefail
+
 # Install Node Version Manager and Latest Node
 # Requires dotfiles with nvm path
 git clone https://github.com/nvm-sh/nvm.git $HOME/.nvm

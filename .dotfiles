@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# exit if any command has a non-zero exit status 
+set -euxo pipefail
+
 echo "Clone bare repo using https (to avoid requiring .ssh key)"
 cd $HOME && git clone --bare https://github.com/zigotica/tilde.git $HOME/._dotfiles.git
 

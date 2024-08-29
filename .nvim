@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+
+# exit if any command has a non-zero exit status 
+set -euxo pipefail
+
 # Install neovim (latest)
 brew install neovim --HEAD
 # install plug manager for vim (neovim autoinstalls lazy.nvim)

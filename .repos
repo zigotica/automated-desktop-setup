@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# exit if any command has a non-zero exit status 
+set -euxo pipefail
+
 echo "Create personal and work folders"
 mkdir $HOME/Documents/personal
 mkdir $HOME/Documents/work
