@@ -24,6 +24,7 @@ c,Enable tap to click for this user and for the login screen,true,defaults write
 c,Use scale for minimize/maximize window effect,true,defaults write com.apple.dock mineffect -string 'scale',
 d,Automatically hide and show the Dock,true,com.apple.dock autohide,
 #,Safari & Webkit,,,
+d,Remember closed windows when reopeing application,true,NSGlobalDomain NSQuitAlwaysKeepsWindows,
 c,Allow to open pop-up windows automatically,false,defaults write com.apple.Safari WebKitJavaScriptCanOpenWindowsAutomatically -bool true && defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool true,defaults write com.apple.Safari WebKitJavaScriptCanOpenWindowsAutomatically -bool false && defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool false
 c,Enable the use of Java,false,defaults write com.apple.Safari WebKitJavaEnabled -bool true && defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled -bool true && defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabledForLocalFiles -bool true,defaults write com.apple.Safari WebKitJavaEnabled -bool false && defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled -bool false && defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabledForLocalFiles -bool false
 d,Enable do not track,true,com.apple.Safari SendDoNotTrackHTTPHeader,
