@@ -18,6 +18,7 @@ npm i -g diagnostic-languageserver # general purpose language server
 npm i -g typescript typescript-language-server # tsserver
 npm i -g vls # vuels
 npm i -g prettier
+brew install ccls # C/C++/ObjC, see https://github.com/MaskRay/ccls
 brew install rust-analyzer # rust
 brew install lua-language-server # lua
 brew install stylua
