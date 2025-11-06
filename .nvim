@@ -22,3 +22,5 @@ brew install ccls # C/C++/ObjC, see https://github.com/MaskRay/ccls
 brew install rust-analyzer # rust
 brew install lua-language-server # lua
 brew install stylua
+npm install -g yaml-language-server
+brew install alesbrelih/gitlab-ci-ls/gitlab-ci-ls
