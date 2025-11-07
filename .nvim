@@ -14,6 +14,7 @@ bash -c 'curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 npm i -g @ansible/ansible-language-server # ansible
 npm i -g bash-language-server #bashls
 npm i -g vscode-langservers-extracted # cssls, html, eslint, jsonls
+npm i -g css-variables-language-server
 npm i -g diagnostic-languageserver # general purpose language server
 npm i -g typescript typescript-language-server # tsserver
 npm i -g vls # vuels
